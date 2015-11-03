@@ -1,5 +1,9 @@
 # magestic_glow_glow
 
+## Always make a new branch for a new feature or self contained piece of work on the project.
+## Don't work on master.
+## More instructions coming soon.
+
 ### Quick Start
 
 1. Clone the repo
