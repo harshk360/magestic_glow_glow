@@ -25,3 +25,5 @@
   ```
 
 6. Navigate to [http://localhost:5000](http://localhost:5000)
+
+7. Read this - http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
