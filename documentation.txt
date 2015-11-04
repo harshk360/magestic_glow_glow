@@ -1,0 +1,33 @@
+Here is an outline of functionality that we need to implement (because I'm on a windows machine, dont have root access on EWS, and the VM is running an old version of linux, so essentially nothing works.  I will get a virtual machine, but in the meantime:.)
+
+Addressable LED Lights controlled by Memory Mapped I/O
+
+In our C library code:
+
+Init_Funtions:
+- initialize memory-mapped arrays that correspond to the physical configuration of LEDs
+	- Ex: 	Init_Array(size or whatever)
+		Init_Radial(scalar or something)
+
+Objects:
+- initialize various objects and light them up in array
+	- Ex: 	Coord(int x, int y, color, bool vis)
+		Set(Coord[] list)
+		Circle(int x, int y, int radius)
+		Letter(int x, int y, int scale, char c)
+		Message(Letter[] string)
+		Picture(PNG png)
+
+Mutator_Functions:
+- perform mutations on objects
+	- Ex: 	set.SetColor(color c) // will allow for custom images to be treated like a unit
+		message.slide(int direction, int speed, bool wrap) //various sliding translations
+		letter.rotate(int direction, int speed) //rotation
+ 		rectangle.gradient(color sequence[], int speed, int terminate) //changes rectangle to colors in sequence at set speed
+		set.draw(int order[], int speed) //can initialize an image by drawing coordinates one at a time (to their set colors)
+		picture.incrementColor(int speed, int direction) //increments color by some algorithm, can be used with objects with multi-colored pixels		
+
+These are the types of things our C library for python will provide.
+The user will be able to set up their LEDs in a configuration and init_Config said configuration in python. 
+Then he will be able to create objects and manipulate them on the LED configuration using our convenient library.
+TADA!!
