@@ -20,12 +20,12 @@ Objects:
 
 Mutator_Functions:
 - perform mutations on objects
-	- Ex: 	set.SetColor(color c) // will allow for custom images to be treated like a unit
-		message.slide(int direction, int speed, bool wrap) //various sliding translations
-		letter.rotate(int direction, int speed) //rotation
- 		rectangle.gradient(color sequence[], int speed, int terminate) //changes rectangle to colors in sequence at set speed
-		set.draw(int order[], int speed) //can initialize an image by drawing coordinates one at a time (to their set colors)
-		picture.incrementColor(int speed, int direction) //increments color by some algorithm, can be used with objects with multi-colored pixels		
+	- Ex: 	set_color(obj a, color c) // will allow for custom images to be treated like a unit
+		slide(obj a, int direction, int speed, bool wrap) //various sliding translations
+		rotate(obj a, int direction, int speed) //rotation
+ 		gradient(obj a, color sequence[], int speed, int terminate) //changes rectangle to colors in sequence at set speed
+		draw(set a, int order[], int speed) //can initialize an image by drawing coordinates one at a time (to their set colors)
+		increment_color(obj a, int speed, int direction) //increments color by some algorithm, can be used with objects with multi-colored pixels		
 
 These are the types of things our C library for python will provide.
 The user will be able to set up their LEDs in a configuration and init_Config said configuration in python. 
