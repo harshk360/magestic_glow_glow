@@ -1,0 +1,7 @@
+To setup the library, run:
+	python setup.py build_ext --inplace
+
+Then to use libary functions, put this line in the python script:
+	import _glowglow
+
+And you should be good to go. Documentation to come or something.
