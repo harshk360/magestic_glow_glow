@@ -1,26 +1,6 @@
-
---------------------------- Glow Glow ----------------------------
-
-void init_arr(int rows, int cols);
-
-void startup();
-void shutdown();
-
-void set_live(); 
-void set_stall();
-
-void set_update_speed(int frames_per_second);
-
-private {
-	int rows;
-	int cols;
-	int frames_per_sec;
-	int ** last_array_state;
-	int ** next_array_state;
-	bool live;
-}
-
-------------------------------- Set -------------------------------
+#include <Python.h>
+#include <stdbool.h>
+#include "coord.h"
 
 typedef struct Set{
 	Coord * coords;
@@ -28,6 +8,7 @@ typedef struct Set{
 }
 
 //Set Creation Methods
+//Notice, sets can overlap, and mutating a set will bring it to front.
 Set * set(Coord *list, color_t color, bool vis);
 Set * join(Set *sets);
 Set * line(int x1, int x2, int y1, int y2, int width, color_t color, bool vis);
@@ -52,28 +33,4 @@ int draw(int *coord_order, int sec_per_coord);
 int scale(int frac_new_size, int seconds_transformation);
 int rotate(bool direction, int seconds_transformation);
 
--------------------------------- Coord -------------------------------
-
-typedef struct Coord{
-	int x;
-	int y;
-	void *other;
-}
-
-typedef struct color_t{
-	size_t r;
-	size_t g;
-	size_t b;
-}
-
-//Coord Creation Methods
-Coord * coord(int x, int y, color_t color, bool vis);
-
-//Coordinate Methods
-int set_visibility(bool vis); 
-int set_color(color_t color);
-int relocate(int x_offset, int y_offset);
-int slide(int radial_direction, int leds_per_second, int time_off_screen);
-int gradient(color_t *sequence, int seconds_between_colors, int terminatation_time);
-int increment_color(void (*algorithm) (color_t color), int iters_per_sec);
 
