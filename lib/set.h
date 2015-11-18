@@ -28,7 +28,7 @@ int gradient(color_t *sequence, int seconds_between_colors, int terminatation_ti
 int increment_color(void (*algorithm) (color_t color), int iters_per_sec);
 
 //Set methods only
-Coord * get_cords(); 
+Coord * get_coords(); 
 int draw(int *coord_order, int sec_per_coord);
 int scale(int frac_new_size, int seconds_transformation);
 int rotate(bool direction, int seconds_transformation);
